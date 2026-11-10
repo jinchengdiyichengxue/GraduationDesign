@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 BASE = Path(__file__).resolve().parent.parent
 WORK = BASE / '.work'
 SOURCE = WORK / 'original_202310232005.docx'
-FINAL = BASE / '202310232005_蒋以怀_开题报告.docx'
+FINAL = WORK / 'basic_candidate.docx'
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
 R = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
 M = 'http://schemas.openxmlformats.org/officeDocument/2006/math'
@@ -136,6 +136,8 @@ plans = [
 ('2027.4.22-2027.5.12','完成论文定稿、演示与答辩材料，复核系统和资料，准备毕业答辩。'),
 ]
 
+exec((WORK/'basic_scope.py').read_text(encoding='utf-8'), globals())
+
 def diagrams():
     font=lambda n:ImageFont.truetype('C:/Windows/Fonts/simsun.ttc',n)
     def canvas(h):
@@ -154,17 +156,17 @@ def diagrams():
                     t1=j/max(steps,1);t2=min(j+1,steps)/max(steps,1);d.line([(a[0]+(b[0]-a[0])*t1,a[1]+(b[1]-a[1])*t1),(a[0]+(b[0]-a[0])*t2,a[1]+(b[1]-a[1])*t2)],fill='black',width=2)
         a,b=pts[-2:];ang=math.atan2(b[1]-a[1],b[0]-a[0]);d.polygon([b,(b[0]-17*math.cos(ang-.45),b[1]-17*math.sin(ang-.45)),(b[0]-17*math.cos(ang+.45),b[1]-17*math.sin(ang+.45))],fill='black')
     im,d=canvas(760)
-    left=[(70,55,580,155,'系统需求\n编号与验收条件'),(190,260,700,360,'控制与接口设计\n算法和硬件分层'),(310,465,820,565,'离散模型与MIL\n工况和非理想因素')]
-    right=[(1220,55,1730,155,'台架系统验证\n转速和负载试验'),(1100,260,1610,360,'PIL与目标执行\n数值一致性和时间'),(980,465,1490,565,'生成代码与SIL\n主机代码对比')]
+    left=[(70,55,580,155,'系统方案\n速度环与电流环'),(190,260,700,360,'控制模型\nPI与坐标变换'),(310,465,820,565,'仿真调试\n启动与调速')]
+    right=[(1220,55,1730,155,'电机实验\n转速与电流波形'),(1100,260,1610,360,'硬件调试\n采样与PWM输出'),(980,465,1490,565,'代码生成\nSTM32程序集成')]
     for x1,y1,x2,y2,s in left+right:box(d,(x1,y1,x2,y2),s)
     arr(d,[(325,155),(445,260)]);arr(d,[(445,360),(565,465)]);arr(d,[(820,515),(980,515)])
     arr(d,[(1235,465),(1355,360)]);arr(d,[(1355,260),(1475,155)])
     arr(d,[(580,105),(1220,105)],True);arr(d,[(700,310),(1100,310)],True)
-    text(d,(900,650),'需求、模型、代码、用例、结果双向追踪',38)
-    text(d,(900,710),'发现偏差后回溯修正并执行回归测试',32)
+    text(d,(900,650),'模型仿真、代码实现与电机实验相互校核',38)
+    text(d,(900,710),'根据运行波形调整PI参数与采样设置',32)
     im.save(WORK/'mbd.png')
     im,d=canvas(690)
-    xs=[(60,140,300,255,'速度PI\n限流与抗饱和'),(390,140,660,255,'d/q电流PI\n解耦与限幅'),(750,140,990,255,'逆Park\n变换'),(1080,140,1320,255,'SVPWM\n占空比'),(1410,140,1730,255,'逆变器\nPMSM')]
+    xs=[(60,140,300,255,'速度PI\n电流指令限幅'),(390,140,660,255,'d/q电流PI\n电压指令限幅'),(750,140,990,255,'逆Park\n变换'),(1080,140,1320,255,'SVPWM\n占空比'),(1410,140,1730,255,'逆变器\nPMSM')]
     for a,b,c,e,s in xs:box(d,(a,b,c,e),s,32)
     for i in range(4):arr(d,[(xs[i][2],197),(xs[i+1][0],197)])
     text(d,(175,65),'转速给定 n*',34);arr(d,[(175,90),(175,140)])
@@ -221,7 +223,7 @@ def paragraph(s,kind='p'):
     elif kind=='sub':before=100;after=40;pr.append(el('keepNext'));pr.append(el('keepLines'))
     elif kind in ['lead','olh']:align='left';pr.append(el('keepNext'));pr.append(el('keepLines'));after=80
     elif kind=='ol':align='left';line=280
-    elif kind=='ref':size=21;line=260;after=60;pr.append(el('keepLines'))
+    elif kind=='ref':size=21;line=260;after=0;pr.append(el('keepLines'))
     elif kind=='cap':size=21;line=300;align='center';after=80
     elif kind=='eq':size=23;line=330;align='center'
     elif kind=='metric':line=340;after=40
@@ -235,7 +237,7 @@ def paragraph(s,kind='p'):
     # Direct false values override any inherited pagination in the source.
     if kind not in ['h','sub','olh','lead']:
         pr.append(el('widowControl',val='1'))
-        pr.append(el('keepNext',val='0'))
+        pr.append(el('keepNext',val='1' if kind=='eq' else '0'))
         pr.append(el('keepLines',val='0' if kind in ['p','metric'] else '1'))
     def run(text):
         r=E.SubElement(p,q('r'));rp=E.SubElement(r,q('rPr'))
@@ -273,7 +275,29 @@ def imagep(name):
 def fill_cell(tc,items):
     for n in list(tc):
         if n.tag!=q('tcPr'):tc.remove(n)
-    for kind,s in items:tc.append(imagep(s) if kind=='fig' else paragraph(s,kind))
+    idx=0
+    while idx<len(items):
+        kind,s=items[idx]
+        if kind=='eq':
+            # One native equation array keeps the four basic motor equations
+            # together when a table continues onto the next page.
+            expressions=[]
+            while idx<len(items) and items[idx][0]=='eq':
+                expressions.append(items[idx][1]);idx+=1
+            p=paragraph('', 'eq');om=p.find('.//{'+M+'}oMath')
+            for child in list(om):om.remove(child)
+            array=E.SubElement(om,'{'+M+'}eqArr')
+            for expression in expressions:
+                entry=E.SubElement(array,'{'+M+'}e')
+                source_math=paragraph(expression,'eq').find('.//{'+M+'}oMath')
+                for child in source_math:entry.append(deepcopy(child))
+            pr=p.find(q('pPr'))
+            for n in pr.findall(q('keepNext')):pr.remove(n)
+            pr.append(el('keepNext',val='0'))
+            tc.append(p)
+            continue
+        tc.append(imagep(s) if kind=='fig' else paragraph(s,kind))
+        idx+=1
     pr=tc.find(q('tcPr'))
     va=pr.find(q('vAlign'))
     if va is not None:va.set(q('val'),'top')
