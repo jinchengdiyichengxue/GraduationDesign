@@ -1,0 +1,142 @@
+[
+  {
+    "number": 1,
+    "language": "中文",
+    "citation": "杨世春, 崔海港, 周思达, 等. 车控操作系统实时性/安全性保障技术[J]. 北京航空航天大学学报, 2024, 50(7): 2051-2065.",
+    "doi": "10.13700/j.bh.1001-5965.2022.0594",
+    "url": "https://doi.org/10.13700/j.bh.1001-5965.2022.0594"
+  },
+  {
+    "number": 2,
+    "language": "中文",
+    "citation": "李易庭, 高泽鹏, 李梦梦, 等. 实现纹波电流还原的PMSM端口模拟算法[J]. 汽车工程, 2024, 46(8): 1469-1478.",
+    "doi": "10.19562/j.chinasae.qcgc.2024.08.013",
+    "url": "https://doi.org/10.19562/j.chinasae.qcgc.2024.08.013"
+  },
+  {
+    "number": 3,
+    "language": "中文",
+    "citation": "章回炫, 范涛, 边元均, 等. 永磁同步电机高性能电流预测控制[J]. 电工技术学报, 2022, 37(17): 4335-4345.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.211054",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.211054"
+  },
+  {
+    "number": 4,
+    "language": "中文",
+    "citation": "连传强, 郭力源, 许观达, 等. 永磁伺服系统转速跟踪控制与数据驱动的参数设计方法[J]. 电工技术学报, 2024, 39(8): 2412-2421.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.230163",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.230163"
+  },
+  {
+    "number": 5,
+    "language": "中文",
+    "citation": "田里思, 宗耐龙, 刘立伟, 等. 基于单电流传感器的永磁同步电机混合脉宽调制技术[J]. 电工技术学报, 2025, 40(8): 2451-2463.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.240519",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.240519"
+  },
+  {
+    "number": 6,
+    "language": "中文",
+    "citation": "马铱林, 袁浩, 尹威, 等. 考虑等效电磁损耗电阻偏移的永磁同步电机直流信号注入在线参数辨识方法[J]. 电工技术学报, 2023, 38(22): 6015-6026.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.230176",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.230176"
+  },
+  {
+    "number": 7,
+    "language": "中文",
+    "citation": "李婕, 杨淑英, 谢震, 等. 基于有效信息迭代快速粒子群优化算法的永磁同步电机参数在线辨识[J]. 电工技术学报, 2022, 37(18): 4604-4613.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.211470",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.211470"
+  },
+  {
+    "number": 8,
+    "language": "中文",
+    "citation": "杨帆, 赵希梅, 金鸿雁, 等. 基于广义比例积分观测器的永磁同步电机鲁棒谐振预测电流控制[J]. 电工技术学报, 2024, 39(10): 2995-3006.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.230331",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.230331"
+  },
+  {
+    "number": 9,
+    "language": "中文",
+    "citation": "东野亚兰, 杨淑英, 王奇帅, 等. 基于增强型扩张状态观测器的永磁同步电机低抖振高抗扰二阶终端滑模电流控制[J]. 电工技术学报, 2024, 39(8): 2434-2448.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.222359",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.222359"
+  },
+  {
+    "number": 10,
+    "language": "中文",
+    "citation": "陈荣, 翟凯淼, 舒胡平. 永磁同步电机双矢量固定开关频率模型预测控制研究[J]. 电工技术学报, 2023, 38(14): 3812-3823.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.221857",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.221857"
+  },
+  {
+    "number": 11,
+    "language": "中文",
+    "citation": "汪逸哲, 黄晟, 廖武, 等. 基于新型虚拟矢量调制方法的IPMSM模型预测电流控制方法[J]. 电工技术学报, 2024, 39(8): 2422-2433.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.230105",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.230105"
+  },
+  {
+    "number": 12,
+    "language": "中文",
+    "citation": "吴翔, 陈硕, 李佳, 等. 基于改进正交锁相环的永磁同步电机无位置传感器控制[J]. 电工技术学报, 2024, 39(2): 475-486.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.221926",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.221926"
+  },
+  {
+    "number": 13,
+    "language": "中文",
+    "citation": "赵文祥, 宋世昌, 周书文, 等. 改进滑模观测器的电流源逆变器驱动PMSM无位置传感器控制[J]. 电工技术学报, 2024, 39(4): 987-995.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.222146",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.222146"
+  },
+  {
+    "number": 14,
+    "language": "中文",
+    "citation": "魏尧, 柯栋梁, 黄东晓, 等. 基于超局部化时间序列的永磁同步电机无模型预测电流滑模控制策略[J]. 电工技术学报, 2024, 39(4): 1022-1032.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.230301",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.230301"
+  },
+  {
+    "number": 15,
+    "language": "中文",
+    "citation": "王祥松, 杨淑英, 谢震, 等. 基于多参数辨识的永磁同步电机磁链预测控制[J]. 电工技术学报, 2024, 39(22): 7084-7098.",
+    "doi": "10.19595/j.cnki.1000-6753.tces.231680",
+    "url": "https://doi.org/10.19595/j.cnki.1000-6753.tces.231680"
+  },
+  {
+    "number": 16,
+    "language": "英文",
+    "citation": "HU M, AHN H, PARK J, et al. Novel rapid control prototyping for permanent magnet synchronous motor via model-based design and STM32 chip[J]. The International Journal of Advanced Manufacturing Technology, 2024, 135: 1187-1204.",
+    "doi": "10.1007/s00170-024-14579-4",
+    "url": "https://doi.org/10.1007/s00170-024-14579-4"
+  },
+  {
+    "number": 17,
+    "language": "英文",
+    "citation": "SU Z, WANG D, YU Z, et al. PHCG: Optimizing Simulink code generation for embedded system with SIMD instructions[J]. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2023, 42(4): 1072-1084.",
+    "doi": "10.1109/TCAD.2022.3197504",
+    "url": "https://doi.org/10.1109/TCAD.2022.3197504"
+  },
+  {
+    "number": 18,
+    "language": "英文",
+    "citation": "CHATRI C, LABBADI M, OUASSAID M, et al. Design and implementation of finite-time control for speed tracking of permanent magnet synchronous motors[J]. IEEE Control Systems Letters, 2023, 7: 721-726.",
+    "doi": "10.1109/LCSYS.2022.3221719",
+    "url": "https://doi.org/10.1109/LCSYS.2022.3221719"
+  },
+  {
+    "number": 19,
+    "language": "英文",
+    "citation": "BOSSO A, TILLI A, CONFICONI C. A hybrid sensorless observer for the robust global asymptotic flux reconstruction of permanent magnet synchronous machines[J]. IEEE Control Systems Letters, 2022, 6: 3367-3372.",
+    "doi": "10.1109/LCSYS.2022.3184649",
+    "url": "https://doi.org/10.1109/LCSYS.2022.3184649"
+  },
+  {
+    "number": 20,
+    "language": "英文",
+    "citation": "ZHANG Z, LIU X, YU J, et al. Time-varying disturbance observer based improved sliding mode single-loop control of PMSM drives with a hybrid reaching law[J]. IEEE Transactions on Energy Conversion, 2023, 38(4): 2539-2549.",
+    "doi": "10.1109/TEC.2023.3277628",
+    "url": "https://doi.org/10.1109/TEC.2023.3277628"
+  }
+]
